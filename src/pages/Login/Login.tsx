@@ -11,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const notify = (message: string) => {
-    console.log(message);
     return toast.success(message, {
       position: "top-right",
       autoClose: 5000,
