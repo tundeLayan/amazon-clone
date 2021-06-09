@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "./Login.scss";
 import { routes } from "../../routes";
 import { auth } from "../../firebase";
@@ -11,12 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const notify = (message: string) => {
-    return toast.success(message, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true
-    });
+    return toast.success(message);
   };
 
   const notifyError = (error: string) => {
@@ -56,7 +51,6 @@ const Login = () => {
   };
   return (
     <div className="login">
-      <ToastContainer autoClose={5000} />
       <Link to={routes.home.path}>
         <img
           className="login__logo"

@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "./Product.scss";
 import { useStateValue } from "../../StateProvider";
 import { getRating } from "../../utils";
@@ -16,10 +16,7 @@ const Product = props => {
   const { id, title, image, price, rating } = props;
   // what useStateValue is returning is the context object returned from createContext, the default context object is an empty object
   // value contains
-  const {
-    dispatch,
-    state: { basket }
-  } = useStateValue();
+  const { dispatch } = useStateValue();
 
   const addToBasket = () => {
     // dispatch the item to the data layer
@@ -34,12 +31,13 @@ const Product = props => {
         quantity: 1
       }
     });
-    toast.success("Item added to basket!");
+    toast.success("Item added to basket!", {
+      autoClose: 2000
+    });
     // console.log("Added to cart");
   };
   return (
     <div className="product">
-      <ToastContainer />
       <div className="product__info">
         <p>{title}</p>
         <p className="product__price">
