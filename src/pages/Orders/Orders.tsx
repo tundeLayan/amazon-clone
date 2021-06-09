@@ -11,8 +11,7 @@ import { useStateValue } from "../../StateProvider";
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const {
-    state: { user, basket },
-    dispatch
+    state: { user }
   } = useStateValue();
 
   useEffect(() => {
@@ -37,9 +36,13 @@ const Orders = () => {
     <div className="orders">
       <h1>Your Orders</h1>
       <div className="orders__order">
-        {orders.map((order, i) => {
-          return <Order key={i} order={order} />;
-        })}
+        {orders.length > 0 ? (
+          orders.map((order, i) => {
+            return <Order key={i} order={order} />;
+          })
+        ) : (
+          <h2>No orders available</h2>
+        )}
       </div>
     </div>
   );
