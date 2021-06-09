@@ -121,6 +121,7 @@ const Payment = () => {
                 price={item.price}
                 rating={item.rating}
                 dispatch={dispatch}
+                quantity={item.quantity}
               />
             ))}
           </div>

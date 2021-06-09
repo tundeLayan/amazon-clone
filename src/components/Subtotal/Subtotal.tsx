@@ -25,7 +25,7 @@ const Subtotal = ({ basket }) => {
           </>
         )}
         decimalScale={2}
-        value={calculateTotalPrice(basket)} //part of the homework
+        value={calculateTotalPrice(basket)}
         displayType={"text"}
         thousandSeperator={true}
         prefix={"$"}

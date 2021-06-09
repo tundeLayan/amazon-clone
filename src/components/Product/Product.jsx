@@ -41,7 +41,6 @@ const Product = props => {
     <div className="product">
       <ToastContainer />
       <div className="product__info">
-        {console.log("Basket is", basket)}
         <p>{title}</p>
         <p className="product__price">
           <small>$</small>
