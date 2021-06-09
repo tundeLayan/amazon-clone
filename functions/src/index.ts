@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 const stripe = require("stripe")(
-    "sk_test_51Iwu4lF2xYJmZfQpm6kn3zsJh3p9NLeDbdDD48mlTMYFCcwZnDbq3Xj1PlJF3I845QP9Kz5SFcbWkKUIdJNXWftM00b0rOUiaq"
+  "sk_test_51Iwu4lF2xYJmZfQpm6kn3zsJh3p9NLeDbdDD48mlTMYFCcwZnDbq3Xj1PlJF3I845QP9Kz5SFcbWkKUIdJNXWftM00b0rOUiaq"
 );
 
 // API
@@ -12,7 +12,7 @@ const app = express();
 
 const corsOptions = {
   origin: "http://localhost:3000",
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 // Middlewares
@@ -32,16 +32,17 @@ app.get("/new", (req: any, res: any) =>
 app.post("/payments/create", async (req: any, res: any) => {
   const total = await req.query.total;
 
-  console.log("Payment request received", total);
+  // console.log("new Payment request received", total);
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
-    currency: "usd",
+    currency: "usd"
   });
 
+  // console.log("Payment intent is ", paymentIntent);
   // OK - Created
   res.status(201).send({
-    clientSecret: paymentIntent.clientSecret,
+    clientSecret: paymentIntent.client_secret
   });
 });
 

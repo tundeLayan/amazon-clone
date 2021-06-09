@@ -26,6 +26,7 @@ const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
+
   useEffect(() => {
     // const ourRequest = axios.CancelToken.source();
     // Generate special stripe secret which allows us to charge a customer
@@ -33,10 +34,15 @@ const Payment = () => {
       // console.log("This is the payment page");
       const response = await axiosCustom({
         method: "post",
-        url: `/payments/create?total=${calculateTotalPrice(basket) * 100}`
+        url: `/payments/create?total=${calculateTotalPrice(basket) * 100}`,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        }
         // cancelToken: ourRequest.token
       });
       setClientSecret(response.data.clientSecret);
+      // console.log("Response from backend is ", response);
     };
     getClientSecret();
 
@@ -51,7 +57,7 @@ const Payment = () => {
     setProcessing(true);
     console.log("This is the client secret", clientSecret);
     const payload = await stripe
-      ?.confirmCardPayment(clientSecret.client_secret, {
+      ?.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements?.getElement(CardElement)
         }
