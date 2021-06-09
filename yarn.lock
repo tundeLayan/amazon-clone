@@ -14131,11 +14131,6 @@ tar@^6.0.2, tar@^6.1.0:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tawkto-react@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/tawkto-react/-/tawkto-react-2.0.3.tgz#e644b6c0aa30f0c8dd31a64b858fa8e3302d9ff8"
-  integrity sha512-KnTMAEA/DJNKlWNa4T7uB6+EzvgTXaEagJRGf7hPBTzMyGHARQQl4LRUi0rLPsss5dDW5ZigiORpmwHCRxk4VA==
-
 tcp-port-used@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tcp-port-used/-/tcp-port-used-1.0.2.tgz#9652b7436eb1f4cfae111c79b558a25769f6faea"
