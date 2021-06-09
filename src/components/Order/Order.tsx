@@ -26,6 +26,7 @@ const Order = (props: IProps) => {
             image={item.image}
             price={item.image}
             rating={item.rating}
+            quantity={item.quantity}
             key={i}
             hideButton={true}
           />
