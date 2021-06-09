@@ -5,10 +5,10 @@ import { useStateValue } from "../../StateProvider";
 
 const Checkout = () => {
   const {
-    state: { basket, user },
+    state: { basket },
     dispatch
   } = useStateValue();
-  console.log("Basket from checkout", basket);
+  // console.log("Basket from checkout", basket);
 
   return (
     <div className="checkout">
