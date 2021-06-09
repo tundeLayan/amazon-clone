@@ -13,7 +13,7 @@ const reducer = (state = initialState, action: any) => {
       const index1 = state.basket.findIndex(
         basketId => basketId["id"] === action.item.id
       );
-      let quantity: any;
+      // let quantity: any;
       // If item is in the basket, check quantity
       if (index1 !== -1) {
         // This will execute if there is same item already in the basket
