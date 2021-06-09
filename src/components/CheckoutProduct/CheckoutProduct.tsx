@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "./CheckoutProduct.scss";
 import { getRating } from "../../utils";
 
@@ -34,7 +34,6 @@ const CheckoutProduct = (props: IProps) => {
   };
   return (
     <div className="checkoutProduct">
-      <ToastContainer />
       <img className="checkoutProduct__image" alt="product" src={image} />
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}</p>

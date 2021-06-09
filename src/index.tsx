@@ -6,11 +6,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer/reducer";
+import { ToastContainer } from "react-toastify";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <StateProvider initialState={initialState} reducer={reducer}>
+        <ToastContainer />
+
         <App />
       </StateProvider>
     </Router>
