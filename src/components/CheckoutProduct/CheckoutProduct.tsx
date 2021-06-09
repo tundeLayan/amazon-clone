@@ -11,9 +11,19 @@ interface IProps {
   rating: number;
   dispatch?: any;
   hideButton?: boolean;
+  quantity: number;
 }
 const CheckoutProduct = (props: IProps) => {
-  const { id, image, title, price, rating, dispatch, hideButton } = props;
+  const {
+    id,
+    image,
+    title,
+    price,
+    rating,
+    dispatch,
+    hideButton,
+    quantity
+  } = props;
   const removeFromBasket = (id: string) => {
     // dispatch action that will remove item from basket
     dispatch({
@@ -32,6 +42,7 @@ const CheckoutProduct = (props: IProps) => {
           <small>$</small>
           <strong>{price}</strong>
         </p>
+        <p className="quantity">Quantity: {quantity}</p>
         <div className="checkoutProduct__rating">{getRating(rating)}</div>
         {!hideButton && (
           <button onClick={() => removeFromBasket(id)}>

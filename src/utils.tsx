@@ -5,7 +5,7 @@ export const getNumberOfItemsInCart = (items: any): number => {
 
 export const calculateTotalPrice = (items: any) => {
   let total = 0;
-  items.map(item => (total += item?.price));
+  items.map(item => (total += item?.price * item?.quantity));
   return total;
 
   // or we could do this too

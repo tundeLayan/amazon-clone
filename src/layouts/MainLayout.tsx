@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 
 import * as Scroll from "react-scroll";
 import {
-  Link,
-  Element,
+  // Link,
+  // Element,
   Events,
   animateScroll as scroll,
-  scrollSpy,
-  scroller
+  scrollSpy
+  // scroller
 } from "react-scroll";
 
 import { Header, Footer } from "../partials";
@@ -17,6 +17,7 @@ interface IProps {
 }
 const MainLayout = (props: IProps) => {
   const { children } = props;
+
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
       console.log("begin", arguments);
