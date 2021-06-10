@@ -1,15 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
+import AliceCarousel from "react-alice-carousel";
 import "./Home.scss";
 import { Product } from "../../components";
+import carousel1 from "../../Assets/carousel1.jpg";
+import carousel2 from "../../Assets/carousel2.jpg";
+import carousel3 from "../../Assets/carousel3.jpg";
+import carousel4 from "../../Assets/carousel4.jpg";
+import carousel5 from "../../Assets/carousel5.jpg";
+import carousel6 from "../../Assets/carousel6.jpg";
+import carousel7 from "../../Assets/carousel7.jpg";
+import leftArrow from "../../Assets/carouselArrows/arrow-circle-left-solid.svg";
+import rightArrow from "../../Assets/carouselArrows/arrow-circle-right-solid.svg";
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slideNext = () => setCurrentIndex((currentIndex + 1) % images.length);
+
+  const slidePrev = () => setCurrentIndex((currentIndex - 1) % images.length);
+  const handleDragStart = e => e.preventDefault();
+
+  const images = [
+    <img
+      src={carousel1}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel2}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel3}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel4}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel5}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel6}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      src={carousel7}
+      className="home__image"
+      alt="carousel-image"
+      onDragStart={handleDragStart}
+    />
+  ];
   return (
     <div className="home">
       <div className="home__container">
+        <AliceCarousel
+          responsive={{ 0: { items: 1 } }}
+          disableDotsControls={true}
+          controlsStrategy={"responsive"}
+          mouseTracking
+          items={images}
+          activeIndex={currentIndex}
+          animationType="fadeout"
+          disableButtonsControls={true}
+        />
         <img
-          className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
+          className="custom-arrow-left"
+          src={leftArrow}
+          onClick={() => slidePrev()}
+        />
+        <img
+          className="custom-arrow-right"
+          src={rightArrow}
+          onClick={() => slideNext()}
         />
         <div className="home__row">
           <Product
