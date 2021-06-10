@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import "react-toastify/dist/ReactToastify.css";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 import "./App.css";
 import { AuthLayout, MainLayout } from "./layouts";

@@ -5,6 +5,7 @@
   margin-right: auto;
   max-width: 1500px;
   .home__container {
+    width: 100%;
     .home__row {
       display: flex;
       z-index: 1;
@@ -15,7 +16,35 @@
 }
 
 .home__image {
-  z-index: -1;
+  z-index: 1;
   margin-bottom: -150px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.custom-arrow-left,
+.custom-arrow-right {
+  position: absolute;
+  top: 40%;
+  border-radius: 50%;
+  border: 1px solid grey;
+  -webkit-box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.56);
+  font-weight: bold;
+  outline: none;
+  height: 1.3em;
+  width: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f3f3;
+}
+.custom-arrow-left {
+  left: 10px;
+}
+.custom-arrow-right {
+  right: 10px;
+}
+.custom-arrow-right:hover,
+.custom-arrow-left:hover {
+  cursor: pointer;
 }
