@@ -64,6 +64,27 @@
       }
     }
   }
+
+  .deliverLocation{
+    display: inline-flex;
+    align-items: center;
+    .location{
+      fill: #fff !important;
+    }
+    p{
+      text-decoration: none;
+      color: #ccc;
+
+              font-size: 14px;
+        font-weight: 700;
+      span{
+        text-decoration: none;
+        color: #fff;
+              font-size: 12px;
+      font-weight: 400;
+      }
+    }
+  }
 }
 
 .below-header {
@@ -94,6 +115,12 @@
     justify-content: flex-end;
     a {
       margin-right: 0;
+    }
+  }
+  .left{
+    display: flex;
+    .hamburger-menu{
+      margin-right: 5px;
     }
   }
 }

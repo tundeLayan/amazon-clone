@@ -1,7 +1,8 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-// import MenuIcon from '@material-ui/icons/Menu';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../Assets/amazonLogo.svg";
@@ -12,7 +13,7 @@ import { auth } from "../firebase";
 
 const Header = () => {
   const {
-    state: { basket, user }
+    state: { basket, user, location }
   } = useStateValue();
 
   const handleAuth = () => {
@@ -25,6 +26,12 @@ const Header = () => {
       <div className="header">
         <Link to={routes.home.path}>
           <Logo />
+        </Link>
+        <Link to={''} style={{ textDecoration: 'none', marginRight: '10px' }}>
+        <span className="deliverLocation">
+          <LocationOnOutlinedIcon className="location"/>
+          <p><span>Deliver to <br/></span>{location}</p>
+        </span>
         </Link>
         <div className="header__search">
           <input className="header__searchInput" type="text" />
@@ -71,7 +78,7 @@ const Header = () => {
       </div>
       <div className="below-header">
         <div className="left">
-          <Link to={""}>{/*<MenuIcon/> */} All</Link>
+          <Link to={""}><span style={{display: 'inline-flex'}}> <MenuIcon className="hamburger-menu"/> All</span></Link>
           <Link to={""}>Today's Deals</Link>
           <Link to={""}>Customer Service</Link>
           <Link to={""}>Gift Cards</Link>
