@@ -1,7 +1,8 @@
 // @ts-nocheck
 export const initialState = {
   basket: [],
-  user: null
+  user: null,
+  location: 'Nigeria'
 };
 
 // reducer is of type: (state, action) => state
@@ -63,6 +64,11 @@ const reducer = (state = initialState, action: any) => {
         ...state,
         user: action.user
       };
+    case 'SET_LOCATION':
+      return {
+        ...state,
+        location: action.location
+      }
     default:
       return state;
   }

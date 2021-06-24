@@ -4,6 +4,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import { auth } from "./firebase";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import axios from 'axios';
 
 import "react-toastify/dist/ReactToastify.css";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -41,6 +42,20 @@ function App({ location }) {
       }
     });
   }, []);
+
+  useEffect(()=>{
+    // Get user's IP address and determine location
+    axios.get('http://ip-api.com/json')
+    .then(({data})=> {
+      dispatch({
+        type: 'SET_LOCATION',
+        location: data.country
+      })
+    })
+    .catch((err)=>{
+      console.error(err);
+    })
+  }, [])
   return (
     <div className="app">
       <Switch>

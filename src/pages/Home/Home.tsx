@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+
 import "./Home.scss";
 import { Product } from "../../components";
 import carousel1 from "../../Assets/carousel1.jpg";
@@ -24,43 +26,43 @@ const Home = () => {
     <img
       src={carousel1}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel2}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel3}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel4}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel5}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel6}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />,
     <img
       src={carousel7}
       className="home__image"
-      alt="carousel-image"
+      alt="carousel"
       onDragStart={handleDragStart}
     />
   ];
@@ -76,16 +78,24 @@ const Home = () => {
           activeIndex={currentIndex}
           animationType="fadeout"
           disableButtonsControls={true}
+          autoPlay={true}
+          autoPlayInterval={1000}
         />
+        {/* <ArrowBackIosIcon
+          className="custom-arrow-left"
+          onClick={() => slidePrev()}
+        /> */}
         <img
           className="custom-arrow-left"
           src={leftArrow}
           onClick={() => slidePrev()}
+          alt="left-arrow"
         />
         <img
           className="custom-arrow-right"
           src={rightArrow}
           onClick={() => slideNext()}
+          alt="right-arrow"
         />
         <div className="home__row">
           <Product
