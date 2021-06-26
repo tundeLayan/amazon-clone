@@ -1,0 +1,36 @@
+.category__cards {
+  cursor: pointer;
+  width: 24%;
+  height: 420px;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  .category__cards__header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 700;
+  }
+  .category__cards__body {
+    flex: 1;
+    object-fit: cover;
+  }
+  .category__cards__footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #007185;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 13px;
+      &:hover {
+        color: #c7511f;
+        text-decoration: underline;
+      }
+    }
+  }
+}
