@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .header {
   height: 60px;
   display: flex;
@@ -18,20 +21,25 @@
     display: flex;
     flex: 1;
     align-items: center;
-    border-radius: 24px;
+    // border-radius: 24px;
     margin-right: 10px;
 
     .header__searchInput {
-      height: 16px;
-      padding: 10px;
+      height: 38px;
+      padding: 7px 10px 10px 0px;
+      // padding: 10px;
       border: none;
-      width: 100%;
+      border-radius: 4px 0 0 4px;
+      width: 96%;
     }
 
     .header__searchIcon {
-      padding: 8px;
-      height: 22px;
-      background-color: #cd9042;
+      padding: 6px;
+      height: 38px;
+      background-color: #febd69;
+      fill: black;
+      width: 43px;
+      border-radius: 0px 4px 4px 0px;
     }
   }
 
@@ -55,33 +63,56 @@
         font-weight: 800;
       }
     }
-    .header__optionBasket {
+    .header__lastlink {
       display: flex;
-      align-items: center;
-      .header__basketCount {
-        margin-left: 10px;
-        margin-right: 10px;
+      margin-left: 10px;
+      .header__optionBasket {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        margin-right: 20px;
+        .header__basket {
+          transform: scale(1.5);
+        }
+        .header__basketCount {
+          // margin-left: 10px;
+          // margin-right: 10px;
+          left: 8px;
+          color: #f08804;
+          position: absolute;
+          z-index: 2;
+          font-weight: bold;
+          top: -16px;
+        }
+        .header__cart {
+          font-size: 14px;
+          line-height: 15px;
+          font-weight: 700;
+          margin-left: 5px;
+          margin-top: auto;
+        }
       }
     }
   }
 
-  .deliverLocation{
+  .deliverLocation {
     display: inline-flex;
     align-items: center;
-    .location{
+    .location {
       fill: #fff !important;
     }
-    p{
+    p {
       text-decoration: none;
       color: #ccc;
 
-              font-size: 14px;
-        font-weight: 700;
-      span{
+      font-size: 14px;
+      font-weight: 700;
+      span {
         text-decoration: none;
         color: #fff;
-              font-size: 12px;
-      font-weight: 400;
+        font-size: 12px;
+        font-weight: 400;
       }
     }
   }
@@ -115,11 +146,27 @@
     justify-content: flex-end;
     a {
       margin-right: 0;
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: 700;
+      padding: 5px 8px 6px 8px;
+      display: inline-block;
+      margin: 6px 2px 7px 1px;
+      box-shadow: none;
+      font-family: inherit;
+      text-decoration: none;
     }
   }
-  .left{
+  .left {
     display: flex;
-    .hamburger-menu{
+    a {
+      font-size: 14px;
+      box-shadow: none;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .hamburger-menu {
       margin-right: 5px;
     }
   }
