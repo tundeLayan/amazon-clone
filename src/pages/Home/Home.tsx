@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 import "./Home.scss";
-import { Product } from "../../components";
+import { Product, CategoryCards } from "../../components";
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
 import carousel3 from "../../Assets/carousel3.jpg";
@@ -97,6 +96,56 @@ const Home = () => {
           onClick={() => slideNext()}
           alt="right-arrow"
         />
+        <div className="home__info">
+          You are on amazon.com. You can also shop on Amazon Germany for
+          millions of products with fast local delivery.{" "}
+          <a>Click here to go to amazon.de</a>
+        </div>
+        <div className="home__row__main">
+          <CategoryCards
+            title="Amazon Basics"
+            link="See more"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/July/amazonbasics_520x520._SY304_CB442725065_.jpg"
+          />
+          <CategoryCards
+            title="Get fit at home"
+            link="Explore now"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_1x._SY304_CB434924743_.jpg"
+          />
+          <CategoryCards
+            title="Shop by Category"
+            link="Shop now"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
+          />
+          <CategoryCards
+            title="Shop by Category"
+            link="Shop now"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
+          />
+        </div>
+        <div className="home__row__main">
+          <CategoryCards
+            title="Oculus"
+            link="Shop now"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_1x._SY304_CB667158353_.jpg"
+          />
+          <CategoryCards
+            title="Find your ideal TV"
+            link="See more"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY304_CB432517900_.jpg"
+          />
+          <CategoryCards
+            title="Gaming accesories"
+            link="See more"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
+          />
+          <CategoryCards
+            title="Computers and Accessories"
+            link="Shop now"
+            image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
+          />
+        </div>
+
         <div className="home__row">
           <Product
             id="12321341"
