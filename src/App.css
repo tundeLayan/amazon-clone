@@ -21,3 +21,7 @@ button {
 button:hover {
   opacity: 0.86;
 }
+
+.app {
+  position: relative;
+}
